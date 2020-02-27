@@ -9,10 +9,7 @@ document.body.appendChild(mainElement);
 
 // Render components
 const render = (Component: () => JSX.Element) => {
-    ReactDOM.render(
-        <Application/>,
-        mainElement
-    );
+    ReactDOM.render(<Application />, mainElement);
 };
 
 render(Application);
