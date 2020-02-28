@@ -1,6 +1,7 @@
 import { hot } from 'react-hot-loader/root';
 import * as React from 'react';
 import Button from './Button';
+import Graph from './Graph';
 
 // functional component
 const Application = () => {
@@ -27,6 +28,7 @@ const Application = () => {
             <h1 style={styles.h1}>Moo(d)</h1>
             <h3 style={styles.h3}>{renderDate()}</h3>
             <Button title={'REFRESH'} onClick={() => handleRefresh()} />
+            <Graph data={{}}/>
         </div>
     );
 };
