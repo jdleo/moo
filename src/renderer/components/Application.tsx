@@ -5,6 +5,12 @@ import Graph from './Graph';
 
 // functional component
 const Application = () => {
+    // state getter/setter for data
+    const [data, setData] = React.useState<number[]>([]);
+
+    // state getter/setter for labels
+    const [labels, setLabels] = React.useState<string[]>([]);
+
     // helper method to render date in pretty format
     const renderDate: () => string = () => {
         // get current date
@@ -18,6 +24,19 @@ const Application = () => {
         return `${day}, ${date.getDate()}. ${month}`;
     };
 
+    // componentDidMount
+    React.useEffect(() => {
+        let newData = []
+        let newLabels = [];
+
+        for (let i = 0; i < 750; i++) {
+            newData.push(Math.random());
+            newLabels.push(`${i}`);
+        }
+        setData(newData);
+        setLabels(newLabels);
+    }, [])
+
     // helper method to handle refresh click
     const handleRefresh: () => void = () => {
         console.log('refresh');
@@ -28,7 +47,9 @@ const Application = () => {
             <h1 style={styles.h1}>Moo(d)</h1>
             <h3 style={styles.h3}>{renderDate()}</h3>
             <Button title={'REFRESH'} onClick={() => handleRefresh()} />
-            <Graph data={{}}/>
+            <div style={{ height: '400px', width: '100%' }}>
+                <Graph data={data} labels={labels}/>
+            </div>
         </div>
     );
 };
