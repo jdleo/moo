@@ -1,5 +1,6 @@
 import { hot } from 'react-hot-loader/root';
 import * as React from 'react';
+import Button from './Button';
 
 // functional component
 const Application = () => {
@@ -21,6 +22,7 @@ const Application = () => {
         <div style={styles.container}>
             <h1 style={styles.h1}>Moo(d)</h1>
             <h3 style={styles.h3}>{renderDate()}</h3>
+            <Button/>
         </div>
     );
 };
