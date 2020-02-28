@@ -135,6 +135,7 @@
     "webpack-merge": "^4.2.1"
   },
   "dependencies": {
+    "@nivo/bump": "^0.61.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-redux": "^7.0.3",
